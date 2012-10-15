@@ -223,6 +223,6 @@ class EmailTranslation
      */
     public function displayLanguage()
     {
-        return Locale::getDisplayLanguage($this->getLang());
+        return $this->getLang();
     }
 }

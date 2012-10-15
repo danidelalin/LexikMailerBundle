@@ -82,7 +82,7 @@ class EmailController extends ContainerAware
             'layout'        => $this->container->getParameter('lexik_mailer.base_layout'),
             'email'         => $email,
             'lang'          => $lang,
-            'displayLang'   => Locale::getDisplayLanguage($lang),
+            'displayLang'   => $lang,
             'routePattern'  => urldecode($this->container->get('router')->generate('lexik_mailer.email_edit', array('emailId' => $email->getId(), 'lang' => '%lang%'), true)),
         ));
     }
@@ -143,7 +143,7 @@ class EmailController extends ContainerAware
         return $this->container->get('templating')->renderResponse('LexikMailerBundle:Email:new.html.twig', array(
             'form'      => $form->createView(),
             'layout'    => $this->container->getParameter('lexik_mailer.base_layout'),
-            'lang'      => Locale::getDisplayLanguage($translation->getLang()),
+            'lang'      => $translation->getLang(),
         ));
     }
 

@@ -21,8 +21,8 @@ class LayoutTranslationType extends AbstractType
                 ));
 
         if ($options['with_language']) {
-            $builder->add('lang', 'language', array(
-                'preferred_choices' => array('en', 'fr', 'es', 'de', 'it', 'pt', 'ja', 'zh')
+            $builder->add('lang', 'choice', array(
+                'choices' => array('es' => 'Español', 'en' => 'English')
             ));
         }
     }

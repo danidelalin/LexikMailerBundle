@@ -140,6 +140,6 @@ class LayoutTranslation
      */
     public function displayLanguage()
     {
-        return Locale::getDisplayLanguage($this->getLang());
+        return $this->getLang();
     }
 }

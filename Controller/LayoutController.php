@@ -79,7 +79,7 @@ class LayoutController extends Controller
             'base_layout'   => $this->container->getParameter('lexik_mailer.base_layout'),
             'layout'        => $layout,
             'lang'          => $lang,
-            'displayLang'   => Locale::getDisplayLanguage($lang),
+            'displayLang'   => $lang,
             'routePattern'  => urldecode($this->generateUrl('lexik_mailer.layout_edit', array('layoutId' => $layout->getId(), 'lang' => '%lang%'), true)),
         ));
     }
@@ -141,7 +141,7 @@ class LayoutController extends Controller
         return $this->render('LexikMailerBundle:Layout:new.html.twig', array(
             'form'      => $form->createView(),
             'layout'    => $this->container->getParameter('lexik_mailer.base_layout'),
-            'lang'      => Locale::getDisplayLanguage($translation->getLang()),
+            'lang'      => $translation->getLang(),
         ));
     }
 
